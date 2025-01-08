@@ -35,7 +35,7 @@ func Same(t1, t2 *tree.Tree) bool {
 		val1, ok1 := <-ch1
 		val2, ok2 := <-ch2
 
-		if (val1 != 0) && (val2 != 0) && (val1 != val2) {
+		if val1 != val2 {
 			return false
 		} else if !ok1 || !ok2 {
 			return true
@@ -44,5 +44,6 @@ func Same(t1, t2 *tree.Tree) bool {
 }
 
 func main() {
-	fmt.Println(Same(tree.New(3), tree.New(2)))
+	fmt.Println(tree.New(-1))
+	fmt.Println(Same(tree.New(0), tree.New(0)))
 }
